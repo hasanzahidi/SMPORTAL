@@ -132,10 +132,10 @@ abstract class Template {
                                 <ul>
                                     <li><a href="<?php echo base_url();?>index.php/placements/2018">Batch 2018</a></li>
                                     <li><a href="<?php echo base_url();?>index.php/placements/2017">Batch 2017</a></li>
-                                    <li><a href="<?php echo base_url();?>index.php/placements/2016">Btach 2016</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/placements/2016">Batch 2016</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo base_url();?>index.php/trainings">Trainings</a></li>
+                            <li><a href="<?php echo base_url();?>index.php/trainings">Training</a></li>
                         </ul>
                     </nav>
                     <!--Navigation Wrap End-->
