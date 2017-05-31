@@ -8,9 +8,15 @@ class Projects extends CI_Model{
         return $query->result();
     }
     public function listAllProjects($user_id){
-        
+        $this->load->model('Students');
+        $student_id=$this->Students->getStudent($user_id)->row()->student_id;
+        $query=$this->db->query('select * from projects_done where student_id=\''.$student_id.'\'');
+        return $query->result();
     }
     public function insertNewProject($data,$user_id){
-        
+        $this->load->model('Students');
+        $student_id=$this->Students->getStudent($user_id)->row()->student_id;
+        $data['student_id']=$student_id;
+        $this->db->insert('projects_done', $data);
     }
 }

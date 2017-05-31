@@ -16,11 +16,4 @@ class Exams extends CI_Controller{
         $my_exams=$this->Exams->getMyExams($_SESSION['userid']);
         $this->load->view('my_exam_page',$my_exams);
     }
-    public function upcomingExams(){
-        if($_SESSION['role']==='teacher'){
-            redirect(base_url().'index.php');
-        }
-        $upcoming_exams=$this->Exams->getUpcomingExams($_SESSION['userid']);
-        $this->load->view('my_exam_page',$upcoming_exams);
-    }
 }

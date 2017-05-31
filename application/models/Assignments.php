@@ -20,7 +20,7 @@ class Assignments extends CI_Model {
         $query=$this->db->query('SELECT a.assignment_id, a.issue_date, a.due_date, a.assignment_title, s.subject_name, s.subject_id '
                 . 'FROM assignments as a '
                 . 'NATURAL JOIN teachers_enrollments '
-                . 'NATURAL JOIN subjects as a '
+                . 'NATURAL JOIN subjects as s '
                 . 'WHERE semester=\''.$semester.'\' '
                 . 'AND department_id=\''.$department.'\'');
         return $query->result();

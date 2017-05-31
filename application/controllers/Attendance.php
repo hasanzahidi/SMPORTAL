@@ -12,14 +12,22 @@ class Attendance extends CI_Controller{
     public function index()
     {
         if($_SESSION['role']==='teacher'){
+            /*
             $this->load->model('Teachers');
             $subjects=$this->Teachers->getSubject($_SESSION['userid']);
             $this->load->view('attendance_subjects',$subjects);
+             */
+            redirect(base_url().'index.php');
         }
         elseif($_SESSION['role']==='student'){
+            /*
             $this->load->model('Students');
             $subjects=$this->Students->getSubject($_SESSION['userid']);
             $attendance_record=$this->Attendance->getAttendanceRecord($subjects,$_SESSION['userid']);
+            $this->load->view('attendance_subjects',$attendance_record);
+             */
+            $this->load->model('Students');
+            $attendance_record=$this->Attendance->viewAttendance($this->Students->getStudent($_SESSION['user_id'])->row()->student_id);
             $this->load->view('attendance_subjects',$attendance_record);
         }
         
