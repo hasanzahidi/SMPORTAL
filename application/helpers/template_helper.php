@@ -46,7 +46,7 @@ abstract class Template {
                 <div class="container">
                     <div class="gt_top_element">
                         <ul>
-                            <li><a href="<?php echo base_url(); ?>index.php/faq">Have A Question?</a></li>
+                            <li><a href="http://msit.edu.in">Go to College Website</a></li>
                             <li><i class="fa fa-phone"></i>111-22-333-45</li>
                             <li><i class="fa fa-envelope"></i><a href="#">info@smportal.com</a></li>
                         </ul>
@@ -60,7 +60,7 @@ abstract class Template {
                 	}
                      	else {
                     ?>
-			<a href="<?php echo base_url(); ?>index.php/loginandregister"><i class="icon-lock"></i>Login &#38; Register</a>
+			<a href="<?php echo base_url(); ?>index.php/login"><i class="icon-lock"></i>Login</a>
                     <?php
                      	}
                     ?>
@@ -96,46 +96,52 @@ abstract class Template {
                         </button>
                         <ul>
                             <li class="active"><a href="<?php echo base_url(); ?>">Home</a></li>
-                            <li><a href="javascript:avoid(0);">Courses</a>
+                            <li><a href="<?php echo base_url();?>index.php/departments">Departments</a>
                                 <ul>
                                     <li><a href="javascript:avoid(0);">Under Graduate</a>
                                         <ul>
-                                            <li><a href="<?php echo base_url();?>index.php/courses/ce">Civil Engineering</a></li>
-                                            <li><a href="<?php echo base_url();?>index.php/courses/cse">Computer Science And Engineering</a></li>
-                                            <li><a href="<?php echo base_url();?>index.php/courses/ece">Electronics And Communication Engineering</a></li>
-                                            <li><a href="<?php echo base_url();?>index.php/courses/ee">Electrical Engineering</a></li>
-                                            <li><a href="<?php echo base_url();?>index.php/courses/it">Information Technology</a></li>
-                                            <li><a href="<?php echo base_url();?>index.php/courses/me">Mechanical Engineering</a></li>
-                                            <li><a href="<?php echo base_url();?>index.php/courses/bca">Bachelor of Computer Application</a></li>
-                                            <li><a href="<?php echo base_url();?>index.php/courses/bba">Bachelor of Business Administrator</a></li>
+                                            <li><a href="<?php echo base_url();?>index.php/departments/departmentpage/Core">Civil Engineering</a></li>
+                                            <li><a href="<?php echo base_url();?>index.php/departments/departmentpage/CS">Computer Science And Engineering</a></li>
+                                            <li><a href="<?php echo base_url();?>index.php/departments/departmentpage/EC">Electronics And Communication Engineering</a></li>
+                                            <li><a href="<?php echo base_url();?>index.php/departments/departmentpage/Core">Electrical Engineering</a></li>
+                                            <li><a href="<?php echo base_url();?>index.php/departments/departmentpage/IT">Information Technology</a></li>
+                                            <li><a href="<?php echo base_url();?>index.php/departments/departmentpage/Core">Mechanical Engineering</a></li>
+                                            <li><a href="<?php echo base_url();?>index.php/departments/departmentpage/BCA">Bachelor of Computer Application</a></li>
+                                            <li><a href="<?php echo base_url();?>index.php/departments/departmentpage/BBA">Bachelor of Business Administrator</a></li>
                                         </ul>
                                     </li>
                                     <li><a href="javascript:avoid(0);">Post Graduate</a>
                                         <ul>
-                                            <li><a href="<?php echo base_url();?>index.php/courses/mca">Master Of Computer Application</a></li>
+                                            <li><a href="<?php echo base_url();?>index.php/departments/departmentpage/MCS">Master Of Computer Application</a></li>
                                         </ul>
                                     </li>
                                 </ul>
                             </li>
+                            <li><a href="<?php echo base_url();?>index.php/subjects">Subjects</a></li>
                             <li><a href="<?php echo base_url();?>index.php/assignments">Assignments</a></li>
-                            <li><a href="<?php echo base_url();?>index.php/exams">Exams</a></li>
-                            <li><a href="<?php echo base_url();?>index.php/events">Events</a></li>
-                            <li><a href="javascript:avoid(0);">Teachers</a>
+                            <li><a href="<?php echo base_url();?>index.php/profileviewer/teacherslist">Teachers</a>
                                 <ul>
-                                    <li><a href="<?php echo base_url();?>index.php/teachers/principal">Principal</a></li>
-                                    <li><a href="<?php echo base_url();?>index.php/teachers/hods">HODs</a></li>
-                                    <li><a href="<?php echo base_url();?>index.php/teachers/departmental_teachers">Departmental Teachers</a></li>
-                                    <li><a href="<?php echo base_url();?>index.php/teachers/lab_assistants">Lab Assistants</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/profileviewer/principal">Principal</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/profileviewer/teacherslist">All Teachers</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo base_url();?>index.php/placements">Placements</a>
+                            <li><a href="<?php echo base_url();?>index.php/profileviewer/studentslist">Students</a>
                                 <ul>
-                                    <li><a href="<?php echo base_url();?>index.php/placements/2018">Batch 2018</a></li>
-                                    <li><a href="<?php echo base_url();?>index.php/placements/2017">Batch 2017</a></li>
-                                    <li><a href="<?php echo base_url();?>index.php/placements/2016">Batch 2016</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/profileviewer/studentslist/0/2017">Batch 2017</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/profileviewer/studentslist/0/2018">Batch 2018</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/profileviewer/studentslist/0/2019">Batch 2019</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/profileviewer/studentslist/0/2020">Batch 2020</a></li>
                                 </ul>
                             </li>
-                            <li><a href="<?php echo base_url();?>index.php/trainings">Training</a></li>
+                            <li><a href="javascript:avoid(0);">Others</a>
+                                <ul>
+                                    <li><a href="<?php echo base_url();?>index.php/events">Events</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/clubs">Clubs</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/notices">Notices</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/timetables">Timetables</a></li>
+                                    <li><a href="<?php echo base_url();?>index.php/contact">Contact</a></li>
+                                </ul>
+                            </li>
                         </ul>
                     </nav>
                     <!--Navigation Wrap End-->
@@ -177,12 +183,12 @@ abstract class Template {
                         <div class="gt_foo_about gt_widget_hdg">
                             <h5>Our Services</h5>
                             <ul>
-                                <li><a href="<?php echo base_url();?>index.php/courses">Courses</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/departments">Departments</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/assignments">Assignments</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/exams">Examinations</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/subjects">Subjects</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/events">Events</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/teachers">Teachers</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/placements">Placements</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/clubs">Clubs</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/notices">Notices</a></li>
                             </ul>
                         </div>
                     </div>
@@ -190,12 +196,12 @@ abstract class Template {
                         <div class="gt_foo_about gt_widget_hdg">
                             <h5>My Account</h5>
                             <ul>
-                                <li><a href="<?php echo base_url();?>index.php/account/profile">My Profile</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/assignments">My Assignments</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/account">My Profile</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/profile">My Assignments</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/exams">My Exams</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/events">My Events</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/timetables">Time Table</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/examroutine">Exam Routines</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/marksheet">My Marksheet</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/projects">My Projects</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/trainings">Trainings</a></li>
                             </ul>
                         </div>
                     </div>
@@ -203,7 +209,7 @@ abstract class Template {
                         <div class="gt_foo_about gt_widget_hdg">
                             <h5>Our Support</h5>
                             <ul>
-                                <li><a href="<?php echo base_url();?>index.php/contact">Contact Us</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/contacts">Contact Us</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/blog">Blog</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/meeting">Schedule a Meeting</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/bookfacility">Book a Facility</a></li>
