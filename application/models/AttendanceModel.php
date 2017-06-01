@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Attendance extends CI_Model{
+class AttendanceModel extends CI_Model{
     public function viewAttendance($id){
         $query1=$this->db->query1('SELECT SUM(\'presence\') as presence '
                 . 'FROM attendance '

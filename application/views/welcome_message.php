@@ -497,7 +497,6 @@ class Page extends Template{
         </div>
       </section>
     </div>    
-    </div>
         <?php
     }
 }  

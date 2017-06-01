@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Clubs extends CI_Model{
+class ClubsModel extends CI_Model{
     public function viewClubs($id){
         $query=$this->db->query('SELECT c.club_id, c.club_name, c.logo '
                 . 'FROM clubs as c,club_enrollment as ce '

@@ -3,10 +3,11 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Teachers extends CI_Model{
     public function is_teacher($email)
     {
-        if($this->db->get_where('teachers', array('user_id' => $email))->num_row!==0){
-            return true;
+        $teacher=$this->db->get_where('teachers', array('user_id' => $email));
+        if($teacher->num_rows()==0){
+            return FALSE;
         }
-        return false;
+        return TRUE;
     }
     public function getTeacher($email){
         return $this->db->get_where('teachers', array('user_id' => $email));

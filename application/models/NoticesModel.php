@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Notices extends CI_Model{
+class NoticesModel extends CI_Model{
     public function listAllNotices(){
         $query=$this->db->query('select * from notices');
         return $query->result();

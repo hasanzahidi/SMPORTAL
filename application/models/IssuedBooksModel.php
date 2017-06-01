@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class IssuedBooks extends CI_Model{
+class IssuedBooksModel extends CI_Model{
     public function getIssuedBooks($user_id){
         $this->load->model('Students');
         $student_id=$this->Students->getStudent($user_id)->row()->student_id;

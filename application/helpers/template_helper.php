@@ -46,7 +46,18 @@ abstract class Template {
                 <div class="container">
                     <div class="gt_top_element">
                         <ul>
-                            <li><a href="http://msit.edu.in">Go to College Website</a></li>
+                            <?php 
+                            if(isset($_SESSION['userid'])){
+                            ?>
+                            <li><a href="<?php echo base_url(); ?>index.php/login/logout"><i class="icon-lock"></i>Logout</a></li>
+                            <?php
+                            }
+                            else {
+                            ?>
+                            <li><a href="http://msit.edu.in"><i class="icon-lock"></i>Go to College Website</a></li>
+                            <?php
+                            }
+                            ?>
                             <li><i class="fa fa-phone"></i>111-22-333-45</li>
                             <li><i class="fa fa-envelope"></i><a href="#">info@smportal.com</a></li>
                         </ul>
@@ -153,6 +164,66 @@ abstract class Template {
         <?php
     }
     abstract public function body_section();
+    public function profileSidebar(){
+        $user_data=$_SESSION['user_data'];
+        $role=$_SESSION['role'];
+        ?>
+        <!-- Dashboard Side Bar Wrap Start -->
+          <div class="col-md-4">
+            <div class="gt-user-sidebar">
+              <div class="gt_d_author_wrap wow slideInUp">
+                <div class="gt_d_author_pic">
+                  <figure>
+                    <img src="<?php echo base_url();?>assets/userdp/<?php echo $user_data['user_dp'];?>" alt="">
+                  </figure>
+                </div>
+                <div class="gt_d_author_pic_des">
+                  <h5><?php echo $user_data['first_name'];?> <?php echo $user_data['last_name'];?></h5>
+                  <span class="gt_hdg_span"></span>
+                  <p>Email ID</p>
+                  <label><?php echo $user_data['email'];?></label>
+                </div>
+                <div class="gt_d_author_sbj">
+                  <h6>Mobile:</h6>
+                  <span><?php echo $user_data['contact'];?></span>
+                  <h6>Date of Birth</h6>
+                  <span><?php echo $user_data['dob'];?></span>
+                </div>
+              </div>
+              <div class="gt-usser-account-list">
+                <ul>
+                    <li><a href="<?php echo base_url();?>index.php/account"><i class="icon-three gt-color"></i>Profile Setting</a></li>
+                  <li class="active"><a href="<?php echo base_url();?>index.php/profile"><i class="fa fa-user-circle-o gt-color"></i>My Profile</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/account/address"><i class="fa-location-arrow gt-color"></i>Address</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/departments/mydepartment"><i class="fa-graduation-cap gt-color"></i>Department</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/subjects"><i class="fa-book gt-color"></i>Subjects</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/assignments"><i class="fa-list gt-color"></i>Assignments</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/clubs"><i class="fa-group gt-color"></i>Clubs</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/events"><i class="fa-clock-o gt-color"></i>Events</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/notices"><i class="fa-newspaper-o gt-color"></i>Notices</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/timetable"><i class="fa-calendar gt-color"></i>Timetable</a></li>
+                  <?php
+                    if($role==='student'){
+                    ?> 
+                        <li><a href="<?php echo base_url();?>index.php/exams"><i class="fa-pencil gt-color"></i>Exams</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/attendance"><i class="fa-check gt-color"></i>Attendance</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/books"><i class="fa-bookmark gt-color"></i>Issued Books</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/marksheet"><i class="fa-star-half-empty gt-color"></i>Marksheet</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/projects"><i class="fa-file gt-color"></i>Projects</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/trainings"><i class="fa-truck gt-color"></i>Trainings</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/semfees"><i class="fa-money gt-color"></i>Sem Fees</a></li>
+                    <?php
+                    }
+                    ?>
+                </ul>
+                <a href="<?php echo base_url();?>index.php/login/logout" class="gt-logout"><i class="icon-arrows-2 gt-color"></i>Logout</a>
+              </div>
+            </div>
+          </div>
+          <!-- Dashboard Side Bar Wrap End -->
+
+        <?php
+    }
     public function footer_section()
     {   
         ?>
@@ -196,8 +267,8 @@ abstract class Template {
                         <div class="gt_foo_about gt_widget_hdg">
                             <h5>My Account</h5>
                             <ul>
-                                <li><a href="<?php echo base_url();?>index.php/account">My Profile</a></li>
-                                <li><a href="<?php echo base_url();?>index.php/profile">My Assignments</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/profile">My Profile</a></li>
+                                <li><a href="<?php echo base_url();?>index.php/assignments">My Assignments</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/exams">My Exams</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/marksheet">My Marksheet</a></li>
                                 <li><a href="<?php echo base_url();?>index.php/projects">My Projects</a></li>

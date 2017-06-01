@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Assignments extends CI_Model {
+class AssignmentsModel extends CI_Model {
     public function viewByTeacher($user_id){
         $this->load->model('Teachers');
         $teacher_id=$this->Teachers->getTeacher($user_id)->row()->teacher_id;

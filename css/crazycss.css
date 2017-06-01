@@ -1,0 +1,315 @@
+/*-------------------------------------
+[ 5.1 Wishlist ]
+---------------------------------------*/
+table {width: 100%;}
+table thead tr th {
+    background: #e5e5e5 none repeat scroll 0 0;
+    padding: 10px;
+    text-align: center;
+    text-transform: uppercase;
+}
+.pages table {
+    border: 1px solid #e5e5e5;
+}
+table tbody i.pe-7s-close {
+    border: 1px solid #ccc;
+    color: #a0a0a0;
+    cursor: pointer;
+    font-size: 20px;
+    height: 25px;
+    line-height: 25px;
+    width: 25px;
+}
+tbody .td-img > a {
+    background: #f5f5f5 none repeat scroll 0 0;
+    display: inline-block;
+    float: left;
+    margin-right: 20px;
+    padding: 20px;
+}
+.pages table tbody tr td {
+    border-bottom: 1px solid #e5e5e5;
+    font-size: 12px;
+    font-weight: 600;
+    padding: 5px 0;
+}
+table.wishlist-table thead tr th:nth-child(2) {text-align: left;}
+.items-dsc h5 a{
+    color: #333;
+    font-size: 12px;
+}
+.items-dsc > p {font-weight: 300;}
+.items-dsc > p,tbody p.itemcolor span,.share-tag a ,.pages table tbody tr td,table tbody .plus-minus a ,.custom-input input ,.custom-select select,.input-text > input, .input-text > textarea ,.single-blog .post-title li span{
+    color: #999;
+}
+.items-dsc > p span ,.blog-tag li a{font-weight: 400;}
+.items-dsc {padding: 41px 0;}
+table td .submit-text > a {
+    font-size: 13px;
+    padding: 3px 20px 0 20px;
+    line-height: 40px;
+}
+.pages.wishlist-page table tbody tr td:first-child {
+	padding-left:0
+}
+/*-------------------------------------
+[ 5.2. cart ]
+---------------------------------------*/
+table.cart-table thead tr th:nth-child(1) {text-align: left;}
+table.cart-table thead tr th:nth-child(1) {padding-left: 70px;}
+.pages table tbody tr td:first-child {padding-left: 30px;}
+table tbody .plus-minus a, table tbody .plus-minus input {
+    border: 1px solid #999;
+    display: inline-block;
+    height: 30px;
+    line-height: 28px;
+    text-align: center;
+    width: 20px;
+}
+table tbody .plus-minus input {
+    color: #666;
+    margin-left: -6px;
+    margin-right: -6px;
+    width: 40px;
+}
+table tbody .plus-minus a {
+    cursor: pointer;
+    width: 30px;
+}
+.cart-form-text .submit-text {margin-top: 40px;}
+.cart-page .margin-top{margin-top:50px;}
+select {-moz-appearance: none;-webkit-appearance: none;}
+.custom-select {position: relative;}
+.custom-select select {margin-bottom: 10px;}
+.custom-input input ,.custom-select select {
+	font-weight: 300;
+	padding: 4px 15px;
+	border: 1px solid #999;
+	border-radius: 0;
+	width: 100%;
+}
+.custom-input input{padding: 7px 15px;}
+ .custom-select::after {
+	content: "";
+	font-size: 30px;
+	line-height: 35px;
+	padding: 0 5px;
+	pointer-events: none;
+	position: absolute;
+	right: 0;
+	top: 0;
+	font-family: pe-icon-7-stroke;
+}
+.custom-select select:focus {
+	-webkit-box-shadow: 0 0 0px 0px #e5e5e5;
+	-moz-box-shadow: 0 0 0px 0px #e5e5e5;
+	box-shadow: 0 0 0px 0px #e5e5e5;
+}
+.cart-form-text {
+	border:1px solid transparent;
+	border-top:0;
+	padding: 50px 30px;
+	transition:.3s;
+}
+.single-cart-form:hover .cart-form-text{border-color:#e5e5e5;}
+.cart-form-title h4 {
+    background: #333 none repeat scroll 0 0;
+    color: #fff;
+    font-size: 16px;
+	margin-bottom:0;
+    padding: 15px 0;
+    text-align: center;
+}
+.cart-page a.dec.qtybutton {padding-top: 0;}
+.cart-form-text p {margin-bottom: 20px;}
+.pages .cart-form-text table {border: 0;}
+.pages .cart-form-text .submit-text a {
+    padding: 3px 15px 0 15px;
+    line-height: 34px;
+}
+.pages .cart-form-text table tbody tr:last-child td, .pages .cart-form-text table tbody tr:last-child th {
+  padding-bottom: 15px;
+}
+.pages .cart-form-text table tbody tr td {
+    border: 0 none;
+    text-align: right;
+}
+.pages .cart-form-text table tbody tr th, .pages .cart-form-text table tbody tr td {
+	padding: 0 0 10px;
+}
+.pages .cart-form-text table tbody tr th, .pages .cart-form-text table tbody tr td,.cart-form-text tfoot tr th, .cart-form-text tfoot tr td {
+	text-transform: uppercase;
+	font-weight: 500;
+}
+.cart-form-text tfoot {
+    border-top: 1px solid #666;
+}
+.cart-form-text tfoot tr th, .cart-form-text tfoot tr td {
+    margin-top: 10px;
+}
+.cart-form-text tfoot tr td {
+	color: #ef6644;
+	font-weight: 700;
+	text-align: right;
+}
+.tfoot-padd{padding-top:20px}
+/*-------------------------------------
+[ 5.6 login ]
+---------------------------------------*/
+.log-title h3 {color: #333;}
+.log-title hr {
+	border-bottom: 5px solid #eee;
+	margin: 0 0 40px;
+	width: 100px;
+}
+.login-page .custom-input {
+    border: 1px solid #ccc;
+    padding: 50px;
+}
+.login-page .new-customer .custom-input {
+    border: 0px solid #ccc;
+    padding: 0px;
+}
+.login-page .custom-input p {
+    color: #666;
+    margin-bottom: 30px;
+}
+.login-page .custom-input input {
+    margin-bottom: 10px;
+}
+.login-page .custom-input a.forget {
+    color: #999;
+    display: inline-block;
+    font-weight: 300;
+    margin-bottom: 25px;
+}
+.login-page .custom-input a.forget:hover {
+    color: #ef6644;
+}
+.new-customer label.first-child{margin-right: 30px;}
+.new-customer .custom-input input[type="radio"] {
+    margin: 0 8px 0 0;
+    width: auto;
+}
+.new-customer label {
+    color: #666;
+    font-weight: 400;
+    padding: 5px 0 25px;
+	margin-bottom:0;
+}
+/*-------------------------------------
+[ 5.9 My account ]
+---------------------------------------*/
+.my-account-page .panel .account-title label {
+	cursor: pointer;
+	display: block;
+	margin: 0;
+	padding: 5px 10px;
+}
+.my-account-page .bulling-title h5 {
+	border-bottom: 1px solid #ccc;
+	padding: 10px 0;
+}
+.my-account-page .panel .single-log-info {
+	border-top:0;
+	padding: 10px;
+}
+.my-account-page .prayment-dsc span,.my-right-side a{
+	background: #ef6644  none repeat scroll 0 0;
+	border-radius: 5px;
+	color: #fff;
+	display: block;
+	font-size: 17px;
+	margin-top: 10px;
+	padding: 10px;
+}
+.my-account-page .prament-area .submit-text {padding: 0 0 10px;}
+.my-account-page .red-color {color:#f13340;}
+.my-account-page .single-log-info .input-text textarea {height:auto;}
+.my-account-page .prayment-dsc{width:100%;}
+.my-account-page .account-title.collapse label{color:#ef6644;}
+.my-account-page select {width: 100%;}
+.my-account-page .sing-checkbox label:first-child,.my-account-page .panel-group {margin-bottom: 0;}
+.my-account-page .social-label {display: block;}
+.my-account-page .mr-mrs label input {margin-right: 2px;}
+.my-account-page .custom-input input, .my-account-page .custom-input textarea {
+    margin-bottom: 10px;
+}
+.my-account-page li.panel {
+    display: block;
+    float: none;
+}
+.sing-checkbox input {
+    margin-right: 5px;
+    width: auto;
+}
+.sing-checkbox > label {font-size: 12px;}
+.sing-checkbox > label:first-child {margin-right: 15px;}
+
+
+/*--banner-info--*/
+.banner-info {
+    margin-top: 4em;
+}
+.header-left {
+    padding: 3em;
+}
+.header-right {
+    padding: 3em;
+}
+
+.header-left img {
+     margin-top: 50px;
+     border: 2px solid;
+     max-width:200px; 
+     max-height:200px;
+    box-shadow: 2px 2px 5px #888888;
+}
+.header-right {
+    padding-left: 3em;
+}
+.header-right h1 {
+    font-size: 2.5em;
+    color: #fff;
+    margin: 0.5em 0 0;
+    font-weight: bold;
+}
+.header-right h1 {
+    font-size: 1.2em;
+    color: #FFF;
+    background: #00a78e;
+    display: inline-block;
+    padding: .5em 1.5em;
+    position: relative;
+	    box-shadow: 0 8px 17px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+}
+.header-right h1:before {
+       width: 0;
+    height: 0;
+    position: absolute;
+    content: '';
+    bottom: -9px;
+    left: 12px;
+    border-style: solid;
+    border-width: 14px 11px 0 12px;
+    border-color: #00a78e transparent transparent transparent;
+}
+
+.header-right h6 {
+       font-size: 1em;
+    color: #C7C7C7;
+    margin-top: 1em;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+}
+@media(max-width:384px) {
+    .header-left img {
+        margin-top: -75px;
+        max-width:100px; 
+        max-height:100px;
+    }
+    .dpimg{
+        width:60%;
+        margin:auto;
+    }
+}

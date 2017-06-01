@@ -144,13 +144,11 @@ class Login extends CI_Controller{
         $this->load->model('Students');
         $this->load->model('Teachers');
         if($login_as==='student' && $this->Students->is_student($email)){
-            return true;
+            return TRUE;
         }
-        elseif($login_as==='teacher' && $this->Teachers->is_teacher($email)){
-            return true;
+        if($login_as==='teacher' && $this->Teachers->is_teacher($email)){
+            return TRUE;
         }
-        else {
-            return false;
-        }
+        return FALSE;
     }
 }

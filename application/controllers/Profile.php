@@ -14,7 +14,7 @@ class Profile extends CI_Controller{
                 $this->load->model('Users');
                 $user=$this->Users->getUser($_SESSION['userid'])->row();
                 $student=$this->Students->getStudent($_SESSION['userid'])->row();
-                $student['user_dp']=$user->dp_present=='Y'?md5($_SESSION['userid']).'.jpg':'no-image.jpg';
+                $student->user_dp=$user->dp_present=='Y'?md5($_SESSION['userid']).'.jpg':'no-image.jpg';
                 $this->user_data=$student;
             }
             elseif($_SESSION['role']==='teacher')
@@ -23,7 +23,7 @@ class Profile extends CI_Controller{
                 $this->load->model('Users');
                 $user=$this->Users->getUser($_SESSION['userid'])->row();
                 $teacher=$this->Teachers->getTeacher($_SESSION['userid'])->row();
-                $teacher['user_dp']=$user->dp_present=='Y'?md5($_SESSION['userid']).'.jpg':'no-image.jpg';
+                $teacher->user_dp=$user->dp_present=='Y'?md5($_SESSION['userid']).'.jpg':'no-image.jpg';
                 $this->user_data=$teacher;
             }
         }
@@ -34,6 +34,7 @@ class Profile extends CI_Controller{
     }
     public function index()
     {
-        $this->load->view('profile_page',$this->user_data);
+        $data['user_data']=$this->user_data;
+        $this->load->view('profile_page',$data);
     }
 }

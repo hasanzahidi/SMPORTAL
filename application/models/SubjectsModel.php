@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Subjects extends CI_Model{
+class SubjectsModel extends CI_Model{
     public function listAllSubjects(){
         $query=$this->db->query('select * from subjects');
         return $query->result();

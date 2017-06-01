@@ -28,6 +28,7 @@ class Account extends CI_Controller {
                 'mobile_verify'=>$user->mobile_verify,
                 'auth_key'=>$user->auth_key
             );
+            $_SESSION['user_data']=$this->user_data;
         }
         else
         {

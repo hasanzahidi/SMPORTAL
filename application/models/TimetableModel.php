@@ -1,6 +1,6 @@
 <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
-class Timetable extends CI_Model{
+class TimetableModel extends CI_Model{
     public function listTimetable($user_id,$role){
         $this->load->model('Teachers');
         $teacher_id=$this->Teachers->getTeacher($user_id)->row()->teacher_id;
