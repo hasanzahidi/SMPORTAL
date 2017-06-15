@@ -18,7 +18,7 @@ class Departments extends CI_Controller{
         $this->load->view('department_lists',$data);
     }
     public function departmentPage($id=0){
-        if($id==0){
+        if($id===0){
             redirect(base_url().'index.php/departments');
         }
         else{

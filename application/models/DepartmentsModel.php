@@ -35,8 +35,8 @@ class DepartmentsModel extends CI_Model{
             return $query->result();
         }
     }
-    public function getDeparmentInfo($id){
+    public function getDepartmentInfo($id){
         $query=$this->db->query('select * from departments where department_id=\''.$id.'\'');
-        return $query->result();
+        return $query->row();
     }
 }

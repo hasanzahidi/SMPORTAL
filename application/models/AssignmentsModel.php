@@ -15,8 +15,8 @@ class AssignmentsModel extends CI_Model {
         $this->load->model('Students');
         $student_id=$this->Students->getStudent($user_id)->row()->student_id;
         $department=$this->db->query('SELECT department_id FROM students_enrollments WHERE student_id=\''.$student_id.'\'')->row()->department_id;
-        $reg_year=$this->db->query('SELECT reg_year FROM students WHERE student_id\''.$student_id.'\'')->row()->reg_year;
-        $semester=$this->Students->getSem($reg_year);
+        $reg_year=$this->db->query('SELECT reg_year FROM students WHERE student_id=\''.$student_id.'\'')->row()->reg_year;
+        $semester=(int)$this->Students->getSem($reg_year);
         $query=$this->db->query('SELECT a.assignment_id, a.issue_date, a.due_date, a.assignment_title, s.subject_name, s.subject_id '
                 . 'FROM assignments as a '
                 . 'NATURAL JOIN teachers_enrollments '
@@ -31,7 +31,7 @@ class AssignmentsModel extends CI_Model {
             if($this->findvalid($id,$assignments)){
                 $data['assignment_info']=$this->getAssignmentInfo($id);
                 $data['assignment_question']=$this->getAssignmentQuestions($id);
-                $data['button']=$this->findStudentButton($id);
+                $data['button']=$this->findStudentButton($id,$user_id);
                 return $data;
             }
             return -1;
@@ -41,7 +41,7 @@ class AssignmentsModel extends CI_Model {
             if($this->findvalid($id,$assignments)){
                 $data['assignment_info']=$this->getAssignmentInfo($id);
                 $data['assignment_question']=$this->getAssignmentQuestions($id);
-                $data['button']='See Submissions';
+                $data['button']='Submissions';
                 return $data;
             }
             return -1;
@@ -54,7 +54,18 @@ class AssignmentsModel extends CI_Model {
         $data['assignment_info']=$this->getAssignmentInfo($id);
         $query=$this->db->query('SELECT aq.question_id,aq.question,aq.diagrams,aq.marks,asb.answer,asb.file,asb.timestamp '
                 . 'FROM assignment_submissions as asb '
-                . 'NATURAL JOIN assignment_questions as aq'
+                . 'NATURAL JOIN assignment_questions as aq '
+                . 'WHERE student_id=\''.$student_id.'\' '
+                . 'AND assignment_id=\''.$id.'\'');
+        $data['assignment_answers']=$query->result();
+        return $data;
+    }
+    public function seeMySubmissionTeacher($id,$student_id){
+        $this->load->model('Students');
+        $data['assignment_info']=$this->getAssignmentInfo($id);
+        $query=$this->db->query('SELECT aq.question_id,aq.question,aq.diagrams,aq.marks,asb.answer,asb.file,asb.timestamp '
+                . 'FROM assignment_submissions as asb '
+                . 'NATURAL JOIN assignment_questions as aq '
                 . 'WHERE student_id=\''.$student_id.'\' '
                 . 'AND assignment_id=\''.$id.'\'');
         $data['assignment_answers']=$query->result();
@@ -71,7 +82,7 @@ class AssignmentsModel extends CI_Model {
     public function insertQuestion($data){
         $this->db->insert('assignment_questions', $data);
     }
-    public function seeRepliesList($id){
+    public function listReplies($id){
         $query=$this->db->query('SELECT student_id '
                 . 'FROM students as s '
                 . 'NATURAL JOIN assignment_submissions as asb '
@@ -88,12 +99,12 @@ class AssignmentsModel extends CI_Model {
         return FALSE;
     }
     public function getAssignmentInfo($id){
-        $query=$this->db->query('SELECT a.assignment_id, a.issue_date, a.due_date, a.assignment_title, s.subject_name, s.subject_id '
+        $query=$this->db->query('SELECT a.assignment_id, a.issue_date, a.due_date, a.notes, a.assignment_title, s.subject_name, s.subject_id '
                 . 'FROM assignments as a '
                 . 'NATURAL JOIN teachers_enrollments '
-                . 'NATURAL JOIN subjects as a '
+                . 'NATURAL JOIN subjects as s '
                 . 'WHERE a.assignment_id=\''.$id.'\'');
-        return $query->result();
+        return $query->row();
     }
     public function getAssignmentQuestions($id){
         $query=$this->db->query('SELECT question_id,question,diagrams,marks '
@@ -103,14 +114,14 @@ class AssignmentsModel extends CI_Model {
     }
     public function findStudentButton($id,$user_id){
         $this->load->model('Students');
-        $student_id=$this->Teachers->getStudent($user_id)->row()->student_id;
+        $student_id=$this->Students->getStudent($user_id)->row()->student_id;
         $query=$this->db->query('SELECT COUNT(*) as replies '
                 . 'FROM assignment_submissions '
                 . 'NATURAL JOIN assignment_questions '
                 . 'WHERE student_id=\''.$student_id.'\' '
                 . 'AND assignment_id=\''.$id.'\'');
         $c=$query->row()->replies;
-        if($c===0){
+        if($c==0){
             return 'SUMBIT REPLY';
         }
         else{

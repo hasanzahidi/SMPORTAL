@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 require_once(APPPATH.'helpers/template_helper.php');
 class Page extends Template{
-    public $all_sem_fees;
+    public $replies;
     public function additional_header() {
         ?>
         <link href="<?php echo base_url(); ?>css/dashboard.css" rel="stylesheet">
@@ -21,7 +21,7 @@ class Page extends Template{
     <div class="gt_sub_banner_bg default_width">
       <div class="container">
         <div class="gt_sub_banner_hdg  default_width">
-          <h2>Semester Fee</h2>
+          <h2>Assignment Replies</h2>
           <h6>SMPORTAL</h6>
         </div>
       </div>
@@ -33,7 +33,7 @@ class Page extends Template{
         <div class="gt_breadcrumb_wrap default_width">
             <ul>
                 <li><a href="<?php echo base_url();?>index.php">Home</a></li>
-                <li><a href="<?php echo base_url();?>index.php/semfees">Semester Fee</a></li>
+                <li><a href="<?php echo base_url();?>index.php/assignments">Assignments</a></li>
             </ul>
         </div>
       </div>
@@ -53,38 +53,38 @@ class Page extends Template{
             <div class="gt_d_classes_wrap default_width mb20">
               <div class="gt_d_profile_wrap default_width wow slideInUp">
                 
+                  <h4>Submission</h4>
+                  <?php
+                        foreach($this->replies as $reply){
+                  ?>
                   <table class="gt_classes_table">
-                  <thead class="gt_table_head">
-                    <tr >
-                      <th>Semester</th>
-                      <th>Due Date</th>
-                      <th>Tuition Fee</th>
-                      <th>Hostel Fee</th>
-                      <th>Late Fee</th>
-                      <th>Total Fee</th>
-                      <th>Paid</th>
-                    </tr>
-                  </thead>
                   <tbody class="gt_class_body_bg">
-                      
-                          <?php
-                            foreach($this->all_sem_fees as $sem_fee){
-                           ?>
                       <tr>
-                          <td><?php echo $sem_fee->semester;?></td>
-                          <td><?php echo $sem_fee->due_date;?></td>
-                          <td><?php echo $sem_fee->tution_fee;?></td>
-                          <td><?php echo $sem_fee->hostel_fee;?></td>
-                          <td><?php echo $sem_fee->late_fee;?></td>
-                          <td><?php echo $sem_fee->total;?></td>
-                          <td><?php echo $sem_fee->paid;?></td>
+                          <td>Question : </td>
+                          <td><?php echo $reply->question;?></td>
                       </tr>
-                            <?php
-                            }
-                            ?>
+                      <tr>
+                          <td>Diagram : </td>
+                          <td><?php echo $reply->diagrams;?></td>
+                      </tr>
+                      <tr>
+                          <td>Marks : </td>
+                          <td><?php echo $reply->marks;?></td>
+                      </tr>
+                      <tr>
+                          <td>Answer : </td>
+                          <td><?php echo $reply->answer;?></td>
+                      </tr>
+                      <tr>
+                          <td>Timestamp : </td>
+                          <td><?php echo $reply->timestamp;?></td>
+                      </tr>
                   </tbody>
                   </table>
-              </div>
+                  <br>
+                  <?php
+                        }
+                  ?>
             </div>
           </div>
               
@@ -95,8 +95,8 @@ class Page extends Template{
     }
 }  
 $page = new Page();
-$page->title='Sem Fees | Smportal';
-$page->page_title='Sem Fees';
+$page->title='Your Replies | Smportal';
+$page->page_title='Your  Replies';
 $page->sub_title='';
-$page->all_sem_fees=$all_sem_fees;
+$page->replies=$assignment_answers;
 $page->display();

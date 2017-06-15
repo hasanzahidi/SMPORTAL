@@ -194,24 +194,30 @@ abstract class Template {
                 <ul>
                     <li><a href="<?php echo base_url();?>index.php/account"><i class="icon-three gt-color"></i>Profile Setting</a></li>
                   <li class="active"><a href="<?php echo base_url();?>index.php/profile"><i class="fa fa-user-circle-o gt-color"></i>My Profile</a></li>
-                  <li><a href="<?php echo base_url();?>index.php/account/address"><i class="fa-location-arrow gt-color"></i>Address</a></li>
-                  <li><a href="<?php echo base_url();?>index.php/departments/mydepartment"><i class="fa-graduation-cap gt-color"></i>Department</a></li>
-                  <li><a href="<?php echo base_url();?>index.php/subjects"><i class="fa-book gt-color"></i>Subjects</a></li>
-                  <li><a href="<?php echo base_url();?>index.php/assignments"><i class="fa-list gt-color"></i>Assignments</a></li>
-                  <li><a href="<?php echo base_url();?>index.php/clubs"><i class="fa-group gt-color"></i>Clubs</a></li>
-                  <li><a href="<?php echo base_url();?>index.php/events"><i class="fa-clock-o gt-color"></i>Events</a></li>
-                  <li><a href="<?php echo base_url();?>index.php/notices"><i class="fa-newspaper-o gt-color"></i>Notices</a></li>
-                  <li><a href="<?php echo base_url();?>index.php/timetable"><i class="fa-calendar gt-color"></i>Timetable</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/account/address"><i class="fa-location-arrow gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Address</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/departments/mydepartment"><i class="fa-graduation-cap gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Department</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/subjects"><i class="fa-book gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Subjects</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/assignments"><i class="fa-list gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Assignments</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/clubs"><i class="fa-group gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Clubs</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/events"><i class="fa-clock-o gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Events</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/notices"><i class="fa-newspaper-o gt-color"  style="font-family: FontAwesome; font-style: normal;"></i>Notices</a></li>
+                  <li><a href="<?php echo base_url();?>index.php/timetable"><i class="fa-calendar gt-color"  style="font-family: FontAwesome; font-style: normal;"></i>Timetable</a></li>
                   <?php
                     if($role==='student'){
                     ?> 
-                        <li><a href="<?php echo base_url();?>index.php/exams"><i class="fa-pencil gt-color"></i>Exams</a></li>
-                        <li><a href="<?php echo base_url();?>index.php/attendance"><i class="fa-check gt-color"></i>Attendance</a></li>
-                        <li><a href="<?php echo base_url();?>index.php/books"><i class="fa-bookmark gt-color"></i>Issued Books</a></li>
-                        <li><a href="<?php echo base_url();?>index.php/marksheet"><i class="fa-star-half-empty gt-color"></i>Marksheet</a></li>
-                        <li><a href="<?php echo base_url();?>index.php/projects"><i class="fa-file gt-color"></i>Projects</a></li>
-                        <li><a href="<?php echo base_url();?>index.php/trainings"><i class="fa-truck gt-color"></i>Trainings</a></li>
-                        <li><a href="<?php echo base_url();?>index.php/semfees"><i class="fa-money gt-color"></i>Sem Fees</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/exams"><i class="fa-pencil gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Exams</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/attendance"><i class="fa-check gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Attendance</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/books"><i class="fa-bookmark gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Issued Books</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/marksheet"><i class="fa-star-half-empty gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Marksheet</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/projects"><i class="fa-file gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Projects</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/trainings"><i class="fa-truck gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Trainings</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/semfees"><i class="fa-money gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Sem Fees</a></li>
+                    <?php
+                    }
+                    elseif($role==='teacher'){
+                    ?>
+                        <li><a href="<?php echo base_url();?>index.php/assignments/newassignmentform"><i class="fa-list gt-color" style="font-family: FontAwesome; font-style: normal;"></i>New Assignment</a></li>
+                        <li><a href="<?php echo base_url();?>index.php/seereplieslists"><i class="fa-list gt-color" style="font-family: FontAwesome; font-style: normal;"></i>Submissions</a></li>
                     <?php
                     }
                     ?>

@@ -28,7 +28,7 @@ class Teachers extends CI_Model{
         return 'JNDE';
     }
     public function teacherEnrollments($teacher_id){
-        $query=$this->db->query('SELECT te.subject_id, s.subject_name '
+        $query=$this->db->query('SELECT te.enroll_id, te.subject_id, s.subject_name '
                 . 'FROM teachers_enrollments as te, subjects as s '
                 . 'WHERE te.subject_id=s.subject_id '
                 . 'AND te.teacher_id=\''.$teacher_id.'\'');
